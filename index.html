@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      nav {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+
+      /* *{
+        margin: 0;
+        padding: 0;
+      } */
+
+      .test3 {
+        display: flex;
+        justify-content: flex-end;
+        background-color: greenyellow;
+        border: 1px solid black;
+        list-style-type: none;
+      }
+
+      .test3 > li {
+        display: inline;
+        display: flex;
+        margin: 10px;
+        background-color: aqua;
+        border: 1px solid black;
+        justify-content: center;
+      }
+
+      .test3 > .test {
+        margin-right: auto;
+      }
+
+      nav > ul > li:nth-of-type(2) {
+        background-color: red;
+      }
+
+      .test7 {
+        font-size: 50px;
+        color: chartreuse;
+      }
+
+      button {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: aqua;
+      }
+
+      footer {
+        /* position: absolute;
+        background-color: aqua;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center; */
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #eaeaea;
+      }
+
+      body {
+        overflow-x: hidden;
+        background-color: bisque;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="test3">
+          <li class="test">coba</li>
+          <li><button onclick="fungsi2()">DELETE</button></li>
+          <li>
+            <input class="test6" type="text" name="nama" size="7" />
+          </li>
+          <li><input type="submit" onclick="fungsi1()" class="blue" /></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="test4">
+      <p>BUAT KONTEN DISINi</p>
+    </div>
+
+    <footer>Copyright</footer>
+  </body>
+  <script>
+    const test4 = document.querySelector(".test4");
+    const test5 = document.querySelector(".test5");
+    const test6 = document.querySelector(".test6");
+    const parent2 = document.querySelector(".test4 > p");
+    function fungsi1(e, i) {
+      //ubahwarna
+      const r = Math.round(Math.random() * 255 + 1);
+      const g = Math.round(Math.random() * 255 + 1);
+      const b = Math.round(Math.random() * 255 + 1);
+      //tangkep
+      const test7 = test6.value;
+      //buat elemen baru
+      const pBaru = document.createElement("p");
+      const textP = document.createTextNode(test7);
+      pBaru.setAttribute("class", "test7");
+      pBaru.style.backgroundColor = "rgb(" + r + " " + g + " " + b + ")";
+      pBaru.appendChild(textP);
+
+      //add
+      parent2.after(pBaru);
+    }
+
+    function fungsi2() {
+      test6.value = "";
+    }
+
+    // function ubahWarna() {
+    //   console.log(sbiru.value);
+
+    //   console.log(r + " " + g + " " + b);
+    //   const h1 = document.querySelector("h1");
+    //   h1.style.backgroundColor =
+    // }
+  </script>
+  <script src="script.js"></script>
+</html>
+
+<!-- const test4 = document.querySelector(".test4");
+const test5 = document.querySelector(".test5");
+const test6 = document.querySelector(".test6");
+test5.addEventListener("click", function () {
+  //tangkep
+  const parent2 = document.querySelector(".test4 > p");
+  //buat elemen baru
+  const pBaru = document.createElement("p");
+  const textP = document.createTextNode("new");
+  pBaru.appendChild(textP);
+
+  //add
+  parent2.after(pBaru);
+}); -->
