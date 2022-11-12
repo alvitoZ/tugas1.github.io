@@ -62,7 +62,7 @@
         text-align: center; */
         display: flex;
         justify-content: center;
-        position: absolute;
+        position: relative;
         bottom: 0;
         width: 100%;
         background-color: #eaeaea;
@@ -100,7 +100,7 @@
     const test5 = document.querySelector(".test5");
     const test6 = document.querySelector(".test6");
     const parent2 = document.querySelector(".test4 > p");
-    function fungsi1(e, i) {
+    function fungsi1(){
       //ubahwarna
       const r = Math.round(Math.random() * 255 + 1);
       const g = Math.round(Math.random() * 255 + 1);
@@ -133,17 +133,3 @@
   <script src="script.js"></script>
 </html>
 
-<!-- const test4 = document.querySelector(".test4");
-const test5 = document.querySelector(".test5");
-const test6 = document.querySelector(".test6");
-test5.addEventListener("click", function () {
-  //tangkep
-  const parent2 = document.querySelector(".test4 > p");
-  //buat elemen baru
-  const pBaru = document.createElement("p");
-  const textP = document.createTextNode("new");
-  pBaru.appendChild(textP);
-
-  //add
-  parent2.after(pBaru);
-}); -->
