@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+
     <style>
       nav {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -62,8 +62,8 @@
         text-align: center; */
         display: flex;
         justify-content: center;
+        position: fixed;
         bottom: 0;
-        position: fixed;   
         width: 100%;
         background-color: #eaeaea;
       }
@@ -71,6 +71,23 @@
       body {
         overflow-x: hidden;
         background-color: bisque;
+      }
+
+      .alert {
+        z-index: 1;
+        background-color: rgb(251, 255, 0);
+        border: 1px solid black;
+        margin: auto;
+        width: 50%;
+        text-align: center;
+      }
+
+      .card {
+        display: inline-block;
+        font-size: 15px;
+        line-height: 20px;
+        margin: 20px;
+        text-align: center;
       }
     </style>
     <title>Document</title>
@@ -90,8 +107,10 @@
     </header>
 
     <div class="test4">
-      <p>BUAT KONTEN DISINi P2</p>
+      <p>BUAT KONTEN DISINi</p>
     </div>
+
+    <div class="alert"></div>
 
     <footer>Copyright</footer>
   </body>
@@ -99,11 +118,12 @@
     const test4 = document.querySelector(".test4");
     const test5 = document.querySelector(".test5");
     const test6 = document.querySelector(".test6");
+    const alert = document.querySelector(".alert");
+
     const parent2 = document.querySelector(".test4 > p");
-    function fungsi1(){
+    function fungsi1() {
       //ubahwarna
       const r = Math.round(Math.random() * 255 + 1);
-      const g = Math.round(Math.random() * 255 + 1);
       const b = Math.round(Math.random() * 255 + 1);
       //tangkep
       const test7 = test6.value;
@@ -111,7 +131,7 @@
       const pBaru = document.createElement("p");
       const textP = document.createTextNode(test7);
       pBaru.setAttribute("class", "test7");
-      pBaru.style.backgroundColor = "rgb(" + r + " " + g + " " + b + ")";
+      pBaru.style.backgroundColor = "rgb(" + r + " " + 0 + " " + b + ")";
       pBaru.appendChild(textP);
 
       //add
@@ -122,14 +142,15 @@
       test6.value = "";
     }
 
-    // function ubahWarna() {
-    //   console.log(sbiru.value);
+    window.onload = function () {
+      alert.innerHTML = `<div class="card">
+        <span class="tombolHapus"><button onclick="fungsi3()">X</button></span>
+        <span class="pesan"> 1.Absolute to Fixed 2.Add Alert </span>
+      </div>`;
+    };
 
-    //   console.log(r + " " + g + " " + b);
-    //   const h1 = document.querySelector("h1");
-    //   h1.style.backgroundColor =
-    // }
+    function fungsi3() {
+      alert.style.display = "none";
+    }
   </script>
-  <script src="script.js"></script>
 </html>
-
